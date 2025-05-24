@@ -1,0 +1,9 @@
+pyttsx3
+SpeechRecognition
+librosa
+numpy
+soundfile
+Flask
+flask-cors
+requests
+langdetect

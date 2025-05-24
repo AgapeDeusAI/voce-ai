@@ -1,0 +1,30 @@
+{
+    "nome": "Christopher Junior Obinna Mbah",
+    "alias": "Admin",
+    "email": "t.boy.ax@gmail.com",
+    "ruolo": "Fondatore di Agape",
+    "lingue": [
+        "Italiano",
+        "Inglese",
+        "Igbo"
+    ],
+    "voce_preferita": "it-IT",
+    "riconoscimento": {
+        "frasi_chiave": [
+            "Agape, sono io",
+            "Riconoscimi",
+            "Chi sono io per te?",
+            "Parla con il tuo creatore"
+        ]
+    },
+    "preferenze": {
+        "risposte_vocali": true,
+        "modalit\u00e0_admin": true,
+        "memorizza_interazioni": true
+    },
+    "sicurezza": {
+        "accesso_vocale": true,
+        "verifica_doppia": false,
+        "accesso_riservato": true
+    }
+}
