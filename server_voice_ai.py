@@ -3,6 +3,9 @@ from flask_cors import CORS
 from VoiceAI import VoiceAI  # Deve contenere la logica di sintesi vocale
 import logging
 import os
+import subprocess
+from dotenv import load_dotenv
+load_dotenv()
 
 # --- Configurazione Logging ---
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s - %(message)s')
@@ -83,6 +86,17 @@ def sintetizza_voce():
             "success": False,
             "message": f"Errore interno del server: {str(e)}"
         }), 500
+@app.route("/update", methods=["POST"])
+def aggiorna_da_github():
+    logger.info("🔄 Richiesta di aggiornamento da GitHub ricevuta.")
+    try:
+        result = subprocess.run(["./auto_pull.sh"], capture_output=True, text=True)
+        if result.returncode == 0:
+            return jsonify({"success": True, "message": "Codice aggiornato e server riavviato."}), 200
+        else:
+            return jsonify({"success": False, "error": result.stderr}), 500
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)}), 500
 
 # --- Avvio Server ---
 if __name__ == "__main__":
