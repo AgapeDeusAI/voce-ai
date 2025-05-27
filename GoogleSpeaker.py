@@ -32,8 +32,8 @@ class GoogleSpeaker:
     # e nomi specifici per le voci Neural2, che offrono qualità superiore.
     _SUPPORTED_VOICES = {
         'it': {
-            'femminile': {'code': 'it-IT', 'name': 'it-IT-Neural2-C'},
-            'maschile': {'code': 'it-IT', 'name': 'it-IT-Neural2-D'}
+            'femminile': {'code': 'it-IT', 'name': 'it-IT-Wavenet-C'},
+            'maschile': {'code': 'it-IT', 'name': 'it-IT-Wavenet-B'}
         },
         'en': {
             'femminile': {'code': 'en-US', 'name': 'en-US-Neural2-J'},
@@ -69,7 +69,7 @@ class GoogleSpeaker:
         # Imposta i valori iniziali tramite i setter per la convalida
         self._voce = 'femminile'
         self._lingua = 'it'
-        self._velocita = 1.0
+        self._velocita = 0.85
         self._custom_voice_name: Optional[str] = None # Inizializza l'attributo
 
         self.set_voce(voce, lingua) # Chiama set_voce per impostare voce, lingua e custom_voice_name
