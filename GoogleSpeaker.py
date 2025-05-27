@@ -32,8 +32,7 @@ class GoogleSpeaker:
     # e nomi specifici per le voci Neural2, che offrono qualità superiore.
     _SUPPORTED_VOICES = {
         'it': {
-            'femminile': {'code': 'it-IT', 'name': 'it-IT-Wavenet-C'},
-            'maschile': {'code': 'it-IT', 'name': 'it-IT-Wavenet-B'}
+            'default': {'code': 'it-IT', 'name': 'it-IT-Wavenet-C'}
         },
         'en': {
             'femminile': {'code': 'en-US', 'name': 'en-US-Neural2-J'},
